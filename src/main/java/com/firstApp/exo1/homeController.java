@@ -1,7 +1,6 @@
 package com.firstApp.exo1;
 
 import jakarta.servlet.http.HttpSession;
-import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -25,7 +24,7 @@ public class homeController {
     }
 
     public String getDateFormat(Date date) {
-        String pattern = "dd/MM/yyyy hh:mm:ss";
+        String pattern = "EEEE MMMMM yyyy hh:mm:ss";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String dateFormat = simpleDateFormat.format(date);
         return dateFormat;
