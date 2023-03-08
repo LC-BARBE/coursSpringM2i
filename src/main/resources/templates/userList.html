@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>User List</title>
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <ul th:each="user : ${list}">
     <h3 th:text="${user.getUsername()}"></h3>
     <ul>
-        <li th:text="${user.getFirstName()}"></li>
-        <li th:text="${user.getLastName()}"></li>
-        <li th:text="${user.getEmail()}"></li>
-        <li th:text="${user.getPassword()}"></li>
+        <li><label>FirstName : </label>
+            <p th:text="${user.getFirstName()}"></p></li>
+        <li><label>LastName : </label>
+            <p th:text="${user.getLastName()}"></p></li>
+        <li><label>Email : </label>
+            <p th:text="${user.getEmail()}"></p>
+            <p th:text="${user.getEmailValid()} ? ' - VALID' : ' - INVALID'"></p>
+        </li>
+        <li><label>Password : </label>
+            <p th:text="${user.getPassword()}"></p></li>
     </ul>
 </ul>
 </body>

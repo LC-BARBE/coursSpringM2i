@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>User Form</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
 <h1>Inscription</h1>
 <form action="#" th:action="@{/users/submitForm}" method="post" th:object="${user}">
-    <ul>
-        <li th:each="field : ${fields}">
-            <label th:text="${field}"></label>
-            <input type="text" th:field="*{__${field}__}"/><br/>
-        </li>
-    </ul>
-    <button type="submit">Register</button>
+    <div>
+        <ul>
+            <div th:each="field : ${fields}">
+                <li th:unless="${field == 'emailValid'}">
+                    <label th:text="${field}"></label>
+                    <input type="text" th:field="*{__${field}__}"/><br/>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div>
+        <button type="submit">Register</button>
+    </div>
 </form>
 
 </body>
