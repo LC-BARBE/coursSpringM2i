@@ -24,10 +24,13 @@ public class homeController {
     }
 
     public String getDateFormat(Date date) {
+
         String pattern = "EEEE MMMMM yyyy hh:mm:ss";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String dateFormat = simpleDateFormat.format(date);
         return dateFormat;
     }
+
+
 
 }

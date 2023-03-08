@@ -5,8 +5,11 @@
     <title>LCB test SpringBoot</title>
 </head>
 <body>
+
 <h2 th:text="${session.t}">Null</h2>
 <h3 th:text="${session.datetimeStamp}">Null</h3>
 <h3 th:text="${session.dateFormat}">Null</h3>
+<a th:href="${'/users/form'}">Inscription</a>
+
 </body>
 </html>
